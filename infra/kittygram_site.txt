@@ -1,0 +1,5 @@
+IP: 158.160.8.187;
+name_taski: https://praktikumhub.ddns.net;
+name_kittygram: https://kittygramprac.chickenkiller.com	gi;
+login: raul245;
+password: Viper2018;
