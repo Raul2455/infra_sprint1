@@ -1,84 +1,39 @@
 server {
-    server_name 130.193.40.95 vlrmtvvtaski.zapto.org;
-    
-    location /api/ {
-        proxy_pass http://127.0.0.1:8000;
-    }
-    
-    location /admin/ {
-        proxy_pass http://127.0.0.1:8000;
-    }
+    server_name 158.160.78.80 kittygramraul2455.zapto.org;
 
     location / {
-        root   /var/www/taski;
-        index  index.html index.htm;
-        try_files $uri /index.html;
+        root /var/www/infra_sprint1;
+        try_files $uri $uri/ /index.html;
     }
-
-
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/vlrmtvvtaski.zapto.org/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/vlrmtvvtaski.zapto.org/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-
-}
-server {
-    if ($host = vlrmtvvtaski.zapto.org) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
-
-
-
-    listen 80;
-    server_name 130.193.40.95 vlrmtvvtaski.zapto.org;
-    return 404; # managed by Certbot
-
-
-}
-
-server {
-    server_name 130.193.40.95 vshkittygram.ddnsking.com;
 
     location /api/ {
         proxy_pass http://127.0.0.1:8080;
-        client_max_body_size 20M;
-    }
-    
-    location /admin/ {
-        proxy_pass http://127.0.0.1:8080;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
         client_max_body_size 20M;
     }
 
     location /media/ {
-        root /var/www/infra_sprint1/;
+        alias /var/www/infra_sprint1/media/;
     }
-
-    location / {
-        root   /var/www/infra_sprint1;
-        index  index.html index.htm;
-        try_files $uri /index.html;
-    }
-
 
     listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/vshkittygram.ddnsking.com/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/vshkittygram.ddnsking.com/privkey.pem; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/kittygramraul2455.zapto.org/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/kittygramraul2455.zapto.org/privkey.pem; # managed by Certbot
     include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
 
 }
-
-
 server {
-    if ($host = vshkittygram.ddnsking.com) {
+    if ($host = kittygramraul2455.zapto.org) {
         return 301 https://$host$request_uri;
     } # managed by Certbot
 
 
-
     listen 80;
-    server_name 130.193.40.95 vshkittygram.ddnsking.com;
+    server_name kittygramraul2455.zapto.org;
     return 404; # managed by Certbot
 
 
