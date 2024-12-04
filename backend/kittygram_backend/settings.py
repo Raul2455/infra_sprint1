@@ -8,7 +8,7 @@ SECRET_KEY = os.getenv('DJ_SECRET_KEY', 'default-test-secret-key')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['158.160.78.80', '127.0.0.1', 'localhost', 'kittygramraul2455.zapto.org']
+ALLOWED_HOSTS = ['158.160.65.180', '127.0.0.1', 'localhost', 'kittygramraul2455.zapto.org']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
