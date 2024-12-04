@@ -1,5 +1,5 @@
 server {
-    server_name 158.160.78.80 kittygramraul2455.zapto.org;
+    server_name 158.160.65.180 kittygramraul2455.zapto.org;
 
     location / {
         root /var/www/infra_sprint1;
