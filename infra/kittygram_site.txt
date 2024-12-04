@@ -1,4 +1,4 @@
-IP: 158.160.78.80;
+IP: 158.160.65.180;
 name_taski: https://raultaski.ddnsking.com/;
 name_kittygram: https://kittygramraul2455.zapto.org;
 login: yc-user;
